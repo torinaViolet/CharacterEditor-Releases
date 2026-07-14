@@ -1,8 +1,8 @@
 {
-  "version": "1.2.3",
-  "notes": "紧急修复 AI 长思考或长回复被共享 HTTP 客户端整体超时强制中止的问题；AI 请求不再限制总时长，更新检查仍保留独立的 30 秒超时。",
-  "pub_date": "2026-07-14T12:13:41Z",
-  "url": "https://github.com/torinaViolet/CharacterEditor-Releases/releases/download/v1.2.3/CharacterEditor-Android-arm64.apk",
-  "sha256": "5a257b0a2b01ebbc3300766ce28b4670a5229dae3611f7c2e60b6376ad9413b3",
-  "arch": "arm64-v8a"
+    "version":  "1.2.4",
+    "notes":  "Android 更新改为应用内下载，支持系统/手动代理、实时进度与 SHA-256 校验，并通过系统安装器安全升级；同步包含 v1.2.3 的 AI 长回复超时修复。",
+    "pub_date":  "2026-07-14T15:56:12Z",
+    "url":  "https://github.com/torinaViolet/CharacterEditor-Releases/releases/download/v1.2.4/CharacterEditor-Android-arm64.apk",
+    "sha256":  "6e979a93b69f9a005d4d52e2e2d9643e39525e5a61689893fec7541a679ee137",
+    "arch":  "arm64-v8a"
 }
