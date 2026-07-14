@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6d5dfc">
+  <meta name="description" content="Character Editor 是一体化角色创作、世界构建与 AI 协作工作台。">
+  <meta property="og:title" content="Character Editor">
+  <meta property="og:description" content="角色创作、世界构建与 AI 协作，在同一张工作台完成。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://torinaviolet.github.io/CharacterEditor-Releases/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Character Editor — 角色创作工作台</title>
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="site-header" aria-label="主导航">
+    <a class="brand" href="#top" aria-label="Character Editor 首页">
+      <img src="assets/icon.png" alt="" width="38" height="38">
+      <span>Character Editor</span>
+    </a>
+    <nav>
+      <a href="#features">功能</a>
+      <a href="#capabilities">能力</a>
+      <a href="#download">下载</a>
+      <a href="https://github.com/torinaViolet/CharacterEditor-Releases/releases">更新日志</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> 为角色创作者打造</div>
+        <h1>让角色、世界与灵感<br><em>在同一处生长</em></h1>
+        <p class="hero-lead">Character Editor 将角色卡、世界书、预设、AI 助手与 RP 创作整合为一张安静而强大的工作台。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://github.com/torinaViolet/CharacterEditor-Releases/releases/latest" data-download>
+            <span>下载 Windows 版</span>
+            <small data-version>查看最新版本</small>
+          </a>
+          <a class="button button-secondary" href="#features">了解功能</a>
+        </div>
+        <div class="trust-row" aria-label="产品特性">
+          <span>本地优先</span><i></i><span>免费使用</span><i></i><span>持续更新</span>
+        </div>
+      </div>
+
+      <div class="app-stage" aria-label="Character Editor 界面示意">
+        <div class="app-window">
+          <div class="window-bar">
+            <div class="window-brand"><img src="assets/icon.png" alt=""><span>Character Editor</span></div>
+            <div class="window-actions"><b></b><b></b><b></b></div>
+          </div>
+          <div class="window-body">
+            <aside class="mock-sidebar">
+              <div class="mock-search"></div>
+              <div class="mock-nav active"><span>✦</span> 角色</div>
+              <div class="mock-nav"><span>◈</span> 世界书</div>
+              <div class="mock-nav"><span>≋</span> 预设</div>
+              <div class="mock-nav"><span>◇</span> AI 助手</div>
+              <div class="mock-avatar-row"><div></div><p></p></div>
+              <div class="mock-avatar-row"><div></div><p></p></div>
+              <div class="mock-avatar-row"><div></div><p></p></div>
+            </aside>
+            <div class="mock-editor">
+              <div class="editor-head"><div><small>正在编辑</small><strong>赛琳娜 · 星海旅人</strong></div><button>保存角色</button></div>
+              <div class="editor-grid">
+                <div class="portrait"><div class="portrait-glow"></div><span>✦</span></div>
+                <div class="fields"><label>角色描述</label><div class="field tall"><p></p><p></p><p class="short"></p></div><label>性格与场景</label><div class="field"><p></p><p class="short"></p></div></div>
+              </div>
+              <div class="assistant-card"><div class="spark">✦</div><div><strong>AI 助手</strong><p>世界观与角色设定已准备就绪</p></div><span>6 项能力</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="float-card float-left"><span>◈</span><div><b>世界书已连接</b><small>12 条活跃设定</small></div></div>
+        <div class="float-card float-right"><span>⌁</span><div><b>Skills + MCP</b><small>能力按需启用</small></div></div>
+      </div>
+    </section>
+
+    <section class="intro section-shell" id="features">
+      <div class="section-kicker">一张完整的创作工作台</div>
+      <h2>从第一句设定，到一整个世界</h2>
+      <p class="section-copy">不再在零散工具之间来回切换。创作资产、对话体验与 AI 能力拥有清晰边界，也能在需要时自然协作。</p>
+      <div class="feature-grid">
+        <article class="feature feature-wide">
+          <div class="feature-icon">✦</div>
+          <div><h3>角色卡创作</h3><p>编辑角色描述、性格、场景、开场白与扩展字段，并保持 SillyTavern 角色卡兼容体验。</p></div>
+          <div class="mini-character"><div class="mini-face">✦</div><div><b>角色资料</b><span>设定完整度 86%</span><i><em></em></i></div></div>
+        </article>
+        <article class="feature">
+          <div class="feature-icon">◈</div><h3>世界书与预设</h3><p>独立维护世界知识、提示词顺序和模型参数，移动端也拥有清晰的列表与详情体验。</p>
+        </article>
+        <article class="feature">
+          <div class="feature-icon">◇</div><h3>AI 助手与 RP</h3><p>同一套角色资产既可用于创作辅助，也能直接进入支持分支与上下文管理的角色扮演。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="capability-section" id="capabilities">
+      <div class="section-shell capability-inner">
+        <div>
+          <div class="section-kicker light">能力，由你决定何时启用</div>
+          <h2>Skills 与 MCP，<br>不是杂乱的开关</h2>
+          <p>在设置中统一维护能力，在每个助手或 RP 配置中按需选择。标准 SKILL.md、本地 stdio 与 Streamable HTTP MCP 都拥有明确的作用域和确认策略。</p>
+          <ul>
+            <li><span>✓</span> Skill 富文本编辑、导入与导出</li>
+            <li><span>✓</span> MCP 工具逐项授权与执行确认</li>
+            <li><span>✓</span> 内置目录沙箱保护的本地文件服务</li>
+          </ul>
+        </div>
+        <div class="capability-stack">
+          <div class="cap-card"><div class="cap-top"><span class="cap-icon violet">S</span><div><b>世界观写作规范</b><small>Skill · 按需读取</small></div><i class="switch on"></i></div><p>帮助助手保持术语、叙事视角与世界规则一致。</p></div>
+          <div class="cap-card shifted"><div class="cap-top"><span class="cap-icon blue">M</span><div><b>本地文件</b><small>MCP · 6 个工具</small></div><i class="switch on"></i></div><div class="tool-pills"><span>读取目录</span><span>读取文本</span><span class="confirm">写入需确认</span></div></div>
+          <div class="cap-card shifted-more"><div class="cap-top"><span class="cap-icon coral">P</span><div><b>当前助手配置</b><small>2 Skills · 1 MCP</small></div><i class="status-dot"></i></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="download section-shell" id="download">
+      <div class="download-card">
+        <img src="assets/icon.png" alt="Character Editor 图标" width="96" height="96">
+        <div class="download-copy"><div class="section-kicker">现在开始创作</div><h2>把下一个角色带到这里</h2><p data-release-note>Windows 桌面版现已提供下载，应用内支持安全更新检查。</p></div>
+        <a class="button button-light" href="https://github.com/torinaViolet/CharacterEditor-Releases/releases/latest" data-download><span>下载最新版</span><small data-version>GitHub Releases</small></a>
+      </div>
+      <div class="download-meta"><span>Windows 10 / 11 · x64</span><span>更新包经过签名验证</span><a href="privacy.html">隐私说明</a></div>
+    </section>
+
+    <section class="faq section-shell">
+      <div><div class="section-kicker">常见问题</div><h2>创作应该保持简单</h2></div>
+      <div class="faq-list">
+        <details><summary>Character Editor 是免费的吗？<span>＋</span></summary><p>是。公开发行仓库提供可直接下载的桌面安装包，当前不收取费用。</p></details>
+        <details><summary>我的角色和聊天数据会上传吗？<span>＋</span></summary><p>角色、世界书、预设和会话默认保存在本机。只有在你主动配置 AI 服务或 MCP 服务时，相关请求才会发送到对应服务。</p></details>
+        <details><summary>如何获得新版本？<span>＋</span></summary><p>你可以在应用设置中检查更新，也可以随时访问本仓库的 Releases 页面手动下载。</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="section-shell">
+    <a class="brand" href="#top"><img src="assets/icon.png" alt="" width="34" height="34"><span>Character Editor</span></a>
+    <p>让每一个角色，都拥有值得抵达的世界。</p>
+    <div><a href="https://github.com/torinaViolet/CharacterEditor-Releases/releases">Releases</a><a href="privacy.html">隐私</a></div>
+  </footer>
+</body>
+</html>
