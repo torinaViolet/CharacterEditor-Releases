@@ -1,8 +1,8 @@
 {
-  "version": "1.2.5",
-  "notes": "新增 SillyTavern 1.18 宏运行时，支持会话/全局变量、条件、时间、聊天、Instruct 与动态宏；统一 RP、AI 助手、预设、世界书和 Skills 的宏行为，并完善编辑器补全与数据兼容校验。",
-  "pub_date": "2026-07-16T11:15:29Z",
-  "url": "https://github.com/torinaViolet/CharacterEditor-Releases/releases/download/v1.2.5/CharacterEditor-Android-arm64.apk",
-  "sha256": "111ffeab7a7522c93c10ec0d4b05c8949168983caa614b4893649885bc48d982",
+  "version": "1.3.0",
+  "notes": "全新制卡助手：内置 9 个专业 Skills、ResourceOps 安全编辑/验证/回滚与 ST 宏指导；改进 AI/RP 工具展示、移动端手势、角色选择和应用内确认弹窗。",
+  "pub_date": "2026-07-18T08:45:51Z",
+  "url": "https://github.com/torinaViolet/CharacterEditor-Releases/releases/download/v1.3.0/CharacterEditor-Android-arm64.apk",
+  "sha256": "2628a7ea64e0d19ffd83b6c4cda61dcfa1ddf74617738ef41c20569ea4e11292",
   "arch": "arm64-v8a"
 }
