@@ -1,8 +1,8 @@
 {
-  "version": "1.3.2",
-  "notes": "# Character Editor v1.3.2\n\n- 修复移动端在侧栏内滑动表格或可滚动区域时，手势误判导致侧栏意外关闭的问题。",
-  "pub_date": "2026-07-20T21:19:23.732Z",
-  "url": "https://github.com/torinaViolet/CharacterEditor-Releases/releases/download/v1.3.2/CharacterEditor-Android-arm64.apk",
-  "sha256": "31341f1b1f15cfc16165159836c78343fc45d7b4ff1b25e18756503fab1be1f3",
+  "version": "1.3.3",
+  "notes": "# Character Editor v1.3.3\n\n- 世界书词条、正则脚本和预设 Prompt 全面支持移动端触摸拖拽排序，长按内容区域激活拖拽，桌面端保留鼠标拖拽。\n- 复制操作统一提供成功与失败反馈，工具消息、代码块、错误卡片等不再静默失败。\n- 新增结构化资源剪贴板：世界书词条、正则脚本和预设 Prompt 可跨角色/资源复制与粘贴，支持撤销。\n- 移动端资源和会话标题重命名改用独立弹窗，适应窄屏和软键盘，桌面端继续使用内联编辑。\n- 多个 UX 交互细节修复与改进：UX-009、UX-015、UX-016、UX-020 完成跨端验收。\n\n#update #Windows #Android #CharacterEditor",
+  "pub_date": "2026-07-26T11:13:17.572Z",
+  "url": "https://github.com/torinaViolet/CharacterEditor-Releases/releases/download/v1.3.3/CharacterEditor-Android-arm64.apk",
+  "sha256": "b9a09fe397aab74e179c0d5796cfb5b75487de14c3f20b57cbe1fe89700b8d8d",
   "arch": "arm64-v8a"
 }
