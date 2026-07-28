@@ -1,8 +1,8 @@
 {
-  "version": "1.3.4",
-  "notes": "# Character Editor v1.3.3\n\n- 世界书词条、正则脚本和预设 Prompt 全面支持移动端触摸拖拽排序，长按内容区域激活拖拽，桌面端保留鼠标拖拽。\n- 复制操作统一提供成功与失败反馈，工具消息、代码块、错误卡片等不再静默失败。\n- 新增结构化资源剪贴板：世界书词条、正则脚本和预设 Prompt 可跨角色/资源复制与粘贴，支持撤销。\n- 移动端资源和会话标题重命名改用独立弹窗，适应窄屏和软键盘，桌面端继续使用内联编辑。\n- 多个 UX 交互细节修复与改进：UX-009、UX-015、UX-016、UX-020 完成跨端验收。\n\n#update #Windows #Android #CharacterEditor",
-  "pub_date": "2026-07-26T23:54:24.798Z",
-  "url": "https://github.com/torinaViolet/CharacterEditor-Releases/releases/download/v1.3.4/CharacterEditor-Android-arm64.apk",
-  "sha256": "a2b9d31a29503e00fbb3eb6e9cf90394398cbe7613fb13b16c30533270703355",
+  "version": "1.3.5",
+  "notes": "# Character Editor v1.3.5\n\n- AI 助手与 RP 消息统一使用共享右键菜单，补齐键盘导航、焦点恢复、子菜单往返与视口边界避让。\n- 修复移动端条目六点按钮重复点击时菜单关闭后立即重新打开的问题；同一按钮再次点击现在会正确关闭菜单。\n- 修复 Windows Tauri 中世界书、正则和预设 Prompt 无法使用鼠标拖拽排序的问题，同时保持 Web 与 Android 触摸排序逻辑。\n- 新增真实 Edge 行为级交互测试，覆盖触摸长按、文字选区延迟、菜单切换、Tooltip、长名称布局和 WebView 拖拽兼容性。\n- 强化移动端交互与消息选区复制的发布回归检查，降低跨端输入事件冲突再次出现的风险。\n\n#update #Windows #Android #CharacterEditor",
+  "pub_date": "2026-07-28T09:41:34.653Z",
+  "url": "https://github.com/torinaViolet/CharacterEditor-Releases/releases/download/v1.3.5/CharacterEditor-Android-arm64.apk",
+  "sha256": "49501d72bb52e21857428fe71b31f23b64b7ad3cbd82a8e0ac9d84961d1b76f4",
   "arch": "arm64-v8a"
 }
