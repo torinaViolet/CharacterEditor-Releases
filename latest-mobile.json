@@ -1,8 +1,8 @@
 {
-  "version": "1.3.5",
-  "notes": "# Character Editor v1.3.5\n\n- AI 助手与 RP 消息统一使用共享右键菜单，补齐键盘导航、焦点恢复、子菜单往返与视口边界避让。\n- 修复移动端条目六点按钮重复点击时菜单关闭后立即重新打开的问题；同一按钮再次点击现在会正确关闭菜单。\n- 修复 Windows Tauri 中世界书、正则和预设 Prompt 无法使用鼠标拖拽排序的问题，同时保持 Web 与 Android 触摸排序逻辑。\n- 新增真实 Edge 行为级交互测试，覆盖触摸长按、文字选区延迟、菜单切换、Tooltip、长名称布局和 WebView 拖拽兼容性。\n- 强化移动端交互与消息选区复制的发布回归检查，降低跨端输入事件冲突再次出现的风险。\n\n#update #Windows #Android #CharacterEditor",
-  "pub_date": "2026-07-28T09:41:34.653Z",
-  "url": "https://github.com/torinaViolet/CharacterEditor-Releases/releases/download/v1.3.5/CharacterEditor-Android-arm64.apk",
-  "sha256": "49501d72bb52e21857428fe71b31f23b64b7ad3cbd82a8e0ac9d84961d1b76f4",
+  "version": "1.4.0",
+  "notes": "# Character Editor v1.4.0\n\n> 文档类型：发布说明\n> 状态：准备发布\n> 发布日期：2026-07-30\n\n## 资源与存储\n\n- 新增独立正则资源管理，支持正则组、组内脚本、导入导出以及 RP 会话按组或单条选择应用；正则更新后当前消息会即时重新渲染。\n- Skill 升级为目录型资源，支持文件树、空目录、ZIP 导入导出、右键文件操作、修订记录和桌面物化存储。\n- 新增存储设置，可查看数据库、托管附件、Skill 与 Skill 工作区位置和占用空间；桌面端可直接打开对应目录。\n- 附件改为内容寻址的托管存储，同一文件只保留一份，并支持查看、复制、下载和删除。\n- 新增 AI 助手与 RP 会话导入导出；会话包可以携带附件，导入时自动复用已有内容。\n\n## Skill 脚本与小说分析\n\n- 新增受限 `skill_run`：AI 只能运行已启用 Skill 的 `scripts/` 脚本，每次执行均需用户批准，并提供环境检测、超时、取消、输出限制和产物下载。\n- 内置“小说角色卡分析”Skill，可导入本地 TXT/Markdown 小说，分段读取、搜索世界观与人物线索，并把人物关系、文风、时间线和角色卡草稿持续保存到独立项目工作区。\n- 小说原文保持只读，脚本只能写入受管的分析、索引和角色卡草稿目录。\n- Windows 环境检测改为异步并行查询，脚本与探测进程使用无窗口启动，不再卡住界面或闪烁黑色命令行窗口。\n\n## 界面与兼容性\n\n- 优化 RP 沉浸模式顶栏：桌面端鼠标移入显示，移动端结合滚动手势显示或隐藏，并恢复角色选择手势。\n- 统一全局弹窗定位，修复设置面板被底层顶栏带走的问题；工具卡片支持结构化结果、Markdown 内容和内部滚动。\n- 完善图片查看器，支持消息图片预览、复制、下载和另存为，并修复桌面端打开图片空白。\n- 修复 Android 外部链接无法跳转、角色卡导出错误调用系统分享，以及请求超时和最大工具轮数设为 `0` 时未生效的问题。\n- 优化角色卡预览、正则卡片与嵌套滚动容器的滚动衔接，减少消息列表被意外带动。\n\n#update #Windows #Android #CharacterEditor",
+  "pub_date": "2026-07-29T17:30:05.557Z",
+  "url": "https://github.com/torinaViolet/CharacterEditor-Releases/releases/download/v1.4.0/CharacterEditor-Android-arm64.apk",
+  "sha256": "2c3c0efbdd992692f89a2fdaf996db52e9b6f721646c63b6f4fd39beef97d3f0",
   "arch": "arm64-v8a"
 }
