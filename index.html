@@ -19,8 +19,8 @@
   <div class="ambient ambient-two"></div>
 
   <a class="upgrade-banner" href="#upgrade">
-    <strong>v1.6.1 需要手动安装</strong>
-    <span>本次更换了应用签名密钥，应用内更新对旧版本失效；Android 用户请先导出数据</span>
+    <strong>v1.6.1 需要手动安装（仅 Windows）</strong>
+    <span>本次更换了应用签名密钥，应用内更新对旧版本失效；Android 暂不发布此版本</span>
     <em>查看步骤 →</em>
   </a>
 
@@ -129,10 +129,10 @@
     <section class="download section-shell" id="download">
       <div class="download-card">
         <img src="assets/icon.png" alt="Character Editor 图标" width="96" height="96">
-        <div class="download-copy"><div class="section-kicker">现在开始创作</div><h2>把下一个角色带到这里</h2><p>Character Editor v1.6.1 的 Windows 与 Android 版现已提供下载。</p></div>
+        <div class="download-copy"><div class="section-kicker">现在开始创作</div><h2>把下一个角色带到这里</h2><p>Windows 版已更新到 v1.6.1；Android 版仍是 v1.6.0，这一轮暂不更新。</p></div>
         <div class="download-actions">
           <a class="button button-light" href="https://pub-574cb9a14cd54d07bf69c82e02931fa3.r2.dev/CharacterEditor-Windows-x64-setup.exe"><span>Windows x64</span><small>v1.6.1 · 安装包</small></a>
-          <a class="button button-android" href="https://pub-574cb9a14cd54d07bf69c82e02931fa3.r2.dev/CharacterEditor-Android-arm64.apk"><span>Android ARM64</span><small>v1.6.1 · APK</small></a>
+          <a class="button button-android" href="https://pub-574cb9a14cd54d07bf69c82e02931fa3.r2.dev/CharacterEditor-Android-arm64.apk"><span>Android ARM64</span><small>v1.6.0 · APK</small></a>
         </div>
       </div>
       <div class="download-meta"><span>Windows 10 / 11 · x64</span><span>Android 8.0+ · ARM64</span><span>安装包经过签名验证</span><a href="privacy.html">隐私说明</a></div>
@@ -141,7 +141,7 @@
     <section class="upgrade section-shell" id="upgrade">
       <div class="section-kicker warn">升级须知</div>
       <h2>这一版需要手动安装</h2>
-      <p class="section-copy upgrade-lead">v1.6.1 更换了应用的签名密钥。签名一旦更换，旧版本无法自动升级到新版本——这是系统层面的限制，绕不过去。请按下面的方式安装。</p>
+      <p class="section-copy upgrade-lead">v1.6.1 更换了应用的签名密钥。签名一旦更换，旧版本无法自动升级到新版本——这是系统层面的限制，绕不过去。Windows 手动覆盖安装即可；Android 这一轮暂不发布。</p>
 
       <div class="upgrade-grid">
         <article class="upgrade-card">
@@ -156,16 +156,11 @@
         </article>
 
         <article class="upgrade-card danger">
-          <div class="upgrade-head"><span class="upgrade-badge droid">Android</span><b>务必先导出数据</b></div>
-          <p>Android 只允许同一签名的安装包覆盖安装。新版无法直接覆盖旧版，必须卸载重装——<strong>而卸载会清空应用内的全部数据</strong>。</p>
-          <ol>
-            <li>在旧版应用里<strong>导出数据</strong>，把导出的文件存到手机存储或云盘</li>
-            <li>卸载旧版</li>
-            <li>安装新版 APK</li>
-            <li>在新版里<strong>导入</strong>刚才导出的文件</li>
-          </ol>
-          <p class="upgrade-note danger">跳过第 1 步直接卸载，角色、世界书、预设与聊天记录都会丢失且无法找回。</p>
-          <a class="button button-secondary" href="https://pub-574cb9a14cd54d07bf69c82e02931fa3.r2.dev/CharacterEditor-Android-arm64.apk">下载 Android APK</a>
+          <div class="upgrade-head"><span class="upgrade-badge droid">Android</span><b>这一版暂不发布</b></div>
+          <p>Android 只允许同一签名的安装包覆盖安装。签名换了之后，新版无法覆盖旧版，只能卸载重装——<strong>而卸载会清空应用内的全部数据</strong>，目前应用里还没有一键备份全部数据的功能。</p>
+          <p>把用户推进这条路是不负责任的，所以 <strong>v1.6.1 不发布 Android 版</strong>。安卓端仍是 v1.6.0，可以继续正常使用，也不会收到更新提示。</p>
+          <p class="upgrade-note">下一个 Android 版本会先补上完整的数据导出与导入，再一并处理签名更换。请不要在此之前自行卸载重装。</p>
+          <a class="button button-secondary" href="https://pub-574cb9a14cd54d07bf69c82e02931fa3.r2.dev/CharacterEditor-Android-arm64.apk">下载 Android APK（v1.6.0）</a>
         </article>
       </div>
     </section>
@@ -186,6 +181,10 @@
           <p>修复了存储配置文件在编码异常时被误判为「不存在」、随后被默认路径覆盖的问题。该问题会让应用指向空目录，看起来像数据全部丢失。现在读不懂就停止启动并给出恢复方式，不再覆盖写入。</p>
         </article>
         <article>
+          <h3>新增「设置数据路径」</h3>
+          <p>可以把应用指向某个已经存在的数据目录（设置 → 存储）。此前只有「迁移」，也就是把当前数据搬到别处；重装或换机之后手上只剩一份数据目录时，反而没有入口能让应用用上它。切换只改写指针，不复制也不删除任何文件，当前数据原地保留；确认前会先显示目标目录里的角色数与会话数供核对。</p>
+        </article>
+        <article>
           <h3>新增崩溃诊断</h3>
           <p>应用启动、迁移与错误会记录到本机日志；异常退出会在下次启动时提示，并保留崩溃前的最后操作。界面出错时不再是空白窗口，而是显示错误说明与一键复制的诊断摘要。日志不含聊天内容、角色卡正文或模型密钥。</p>
         </article>
@@ -197,9 +196,10 @@
       <div class="faq-list">
         <details><summary>Character Editor 是免费的吗？<span>＋</span></summary><p>是。公开发行仓库提供可直接下载的桌面安装包，当前不收取费用。</p></details>
         <details><summary>我的角色和聊天数据会上传吗？<span>＋</span></summary><p>角色、世界书、预设和会话默认保存在本机。只有在你主动配置 AI 服务或 MCP 服务时，相关请求才会发送到对应服务。</p></details>
-        <details><summary>如何获得新版本？<span>＋</span></summary><p>正常情况下，Windows 与 Android 都可以在应用设置里检查更新，也可以随时回到本页面手动下载。<strong>但 v1.6.1 是例外</strong>：这一版更换了签名密钥，旧版本无法自动升级，必须按<a href="#upgrade">升级须知</a>手动安装。装上 1.6.1 之后，后续版本恢复自动更新。</p></details>
+        <details><summary>如何获得新版本？<span>＋</span></summary><p>正常情况下可以在应用设置里检查更新，也可以随时回到本页面手动下载。<strong>但 v1.6.1 是例外</strong>：这一版更换了签名密钥，旧版本无法自动升级，Windows 必须按<a href="#upgrade">升级须知</a>手动安装一次。装上 1.6.1 之后，后续版本恢复自动更新。</p></details>
         <details><summary>为什么这次要手动安装？<span>＋</span></summary><p>应用的更新包由一把私钥签名，安装后的版本用配套的公钥验证它。这一版更换了这对密钥，于是旧版本手里的公钥验不过新包，Android 系统也拒绝让签名不同的包覆盖安装。这是系统层面的安全机制，只能手动装一次。</p></details>
-        <details><summary>Android 升级会丢数据吗？<span>＋</span></summary><p>只要按<a href="#upgrade">升级须知</a>的顺序操作就不会：先在旧版里导出数据，卸载后安装新版，再导入。<strong>如果跳过导出直接卸载，应用内的角色、世界书、预设和聊天记录都会被系统清除，无法找回。</strong></p></details>
+        <details><summary>覆盖安装会丢数据吗？<span>＋</span></summary><p>Windows 不会。数据保存在安装目录之外，覆盖安装不会碰它，新版本启动后继续使用同一份数据。如果你把数据放在了自定义位置而新版本没有认出来，可以在应用的设置 → 存储里用「设置数据路径」重新指向它——这个操作只改指针，不会复制或删除任何文件。</p></details>
+        <details><summary>Android 为什么没有 v1.6.1？<span>＋</span></summary><p>因为签名换了之后新版无法覆盖安装，只能卸载重装，<strong>而卸载会清空应用内的全部数据</strong>，目前还没有一键备份全部数据的功能。与其让你冒这个险，不如先不发。安卓端停留在 v1.6.0，可以继续正常使用，也不会收到更新提示；等数据导出与导入补齐后再一并更新。</p></details>
       </div>
     </section>
   </main>
