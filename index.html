@@ -19,8 +19,8 @@
   <div class="ambient ambient-two"></div>
 
   <a class="upgrade-banner" href="#upgrade">
-    <strong>Android 用户：升级到 v1.6.3 需要先导出数据再重装</strong>
-    <span>签名更换后新版无法覆盖旧版，卸载前请按步骤备份；Windows 可以正常更新</span>
+    <strong>Android v1.6.0 及更早：升级需要先导出数据再重装</strong>
+    <span>签名更换后旧版无法被覆盖，卸载前请按步骤备份。v1.6.3 及以上可以在应用内直接升级</span>
     <em>查看步骤 →</em>
   </a>
 
@@ -46,7 +46,7 @@
         <div class="hero-actions">
           <a class="button button-primary" href="https://pub-574cb9a14cd54d07bf69c82e02931fa3.r2.dev/CharacterEditor-Windows-x64-setup.exe">
             <span>下载 Windows 版</span>
-            <small>v1.6.3</small>
+            <small>v1.6.4</small>
           </a>
           <a class="button button-secondary" href="#features">了解功能</a>
         </div>
@@ -129,10 +129,10 @@
     <section class="download section-shell" id="download">
       <div class="download-card">
         <img src="assets/icon.png" alt="Character Editor 图标" width="96" height="96">
-        <div class="download-copy"><div class="section-kicker">现在开始创作</div><h2>把下一个角色带到这里</h2><p>Windows 与 Android 都已更新到 v1.6.3。Android 从旧版升级前，请先看下方的升级须知。</p></div>
+        <div class="download-copy"><div class="section-kicker">现在开始创作</div><h2>把下一个角色带到这里</h2><p>Windows 与 Android 都已更新到 v1.6.4。Android v1.6.3 及以上可以在应用内直接升级；从 v1.6.0 及更早升级前，请先看下方的升级须知。</p></div>
         <div class="download-actions">
-          <a class="button button-light" href="https://pub-574cb9a14cd54d07bf69c82e02931fa3.r2.dev/CharacterEditor-Windows-x64-setup.exe"><span>Windows x64</span><small>v1.6.3 · 安装包</small></a>
-          <a class="button button-android" href="https://pub-574cb9a14cd54d07bf69c82e02931fa3.r2.dev/CharacterEditor-Android-arm64.apk"><span>Android ARM64</span><small>v1.6.3 · APK</small></a>
+          <a class="button button-light" href="https://pub-574cb9a14cd54d07bf69c82e02931fa3.r2.dev/CharacterEditor-Windows-x64-setup.exe"><span>Windows x64</span><small>v1.6.4 · 安装包</small></a>
+          <a class="button button-android" href="https://pub-574cb9a14cd54d07bf69c82e02931fa3.r2.dev/CharacterEditor-Android-arm64.apk"><span>Android ARM64</span><small>v1.6.4 · APK</small></a>
         </div>
       </div>
       <div class="download-meta"><span>Windows 10 / 11 · x64</span><span>Android 8.0+ · ARM64</span><span>安装包经过签名验证</span><a href="privacy.html">隐私说明</a></div>
@@ -141,7 +141,7 @@
     <section class="upgrade section-shell" id="upgrade">
       <div class="section-kicker warn">升级须知</div>
       <h2>Android 这一次需要导出后重装</h2>
-      <p class="section-copy upgrade-lead">非常抱歉。开发电脑此前感染病毒并重置了系统，用于给 Android 安装包签名的密钥一同丢失，只能换用新的签名。Android 只允许同一签名的安装包覆盖安装，所以 v1.6.0 及更早的版本无法直接升级到 v1.6.3，只能卸载后重装，而卸载会清空应用内的全部数据。请先按下面的步骤导出并备份，再安装新版。</p>
+      <p class="section-copy upgrade-lead">非常抱歉。开发电脑此前感染病毒并重置了系统，用于给 Android 安装包签名的密钥一同丢失，只能换用新的签名。Android 只允许同一签名的安装包覆盖安装，所以 v1.6.0 及更早的版本无法直接升级，只能卸载后重装，而卸载会清空应用内的全部数据。请先按下面的步骤导出并备份，再安装新版。</p>
 
       <div class="upgrade-grid">
         <article class="upgrade-card">
@@ -157,42 +157,46 @@
           <ol>
             <li>在旧版里导出需要的数据：RP 与 AI 助手会话列表中的「备份全部」、角色卡、世界书、预设、正则、自己的 Skill，以及 AI 工作空间里的文件夹。</li>
             <li>把导出的文件复制出来。旧版会把它们存进「内部存储/Android/data/com.character_editor.app/files/Download」，<strong>卸载时这里会被一起删除</strong>。可以用数据线连接电脑复制，也可以用手机自带的文件管理器移到「下载」文件夹（部分手机不允许访问 Android/data，这时请用电脑）。</li>
-            <li>卸载旧版，下载并安装 v1.6.3。</li>
+            <li>卸载旧版，下载并安装最新版。</li>
             <li>把文件放回手机的「下载」文件夹，先导入角色卡，再导入会话并绑定到对应的角色；世界书、预设、正则和 Skill 按原来的方式导入。</li>
           </ol>
           <p class="upgrade-note danger">这一次无法迁移：AI 助手的长期记忆、模型与供应商配置（包括 API Key）、MCP 服务和偏好设置，需要在新版中重新设置。</p>
-          <p>装上 v1.6.3 之后，Android 的后续更新都可以在应用内直接升级；v1.7 会加入一键导出与载入全部数据。</p>
-          <a class="button button-secondary" href="https://pub-574cb9a14cd54d07bf69c82e02931fa3.r2.dev/CharacterEditor-Android-arm64.apk">下载 Android APK（v1.6.3）</a>
+          <p>装上 v1.6.3 或更新的版本之后，Android 的后续更新都可以在应用内直接升级——v1.6.4 已经是这样发布的。v1.7 会加入一键导出与载入全部数据。</p>
+          <a class="button button-secondary" href="https://pub-574cb9a14cd54d07bf69c82e02931fa3.r2.dev/CharacterEditor-Android-arm64.apk">下载 Android APK（v1.6.4）</a>
         </article>
       </div>
     </section>
 
     <section class="changelog section-shell" id="changelog">
-      <div><div class="section-kicker">更新日志</div><h2>v1.6.3 做了什么</h2></div>
+      <div><div class="section-kicker">更新日志</div><h2>v1.6.4 做了什么</h2></div>
       <div class="changelog-list">
         <article>
-          <h3>Android 重新发布</h3>
-          <p>Android 与 Windows 重新同步到同一版本，并包含 v1.6.1 与 v1.6.2 的全部修复：世界书重新生效、修复启动卡死与白屏、存储配置文件读不懂时不再被默认值覆盖。</p>
+          <h3>输入框改为悬浮</h3>
+          <p>输入多行文字或手机键盘弹出时，输入框往上覆盖，不再把上面的 AI 消息挤走。原本贴在底部看最新消息的，输入框变高后仍然停在最新消息；正在往上翻看的，位置不动。AI 助手和桌面端同样如此。</p>
         </article>
         <article>
-          <h3>Android 导出改存到「下载」</h3>
-          <p>导出的文件现在保存到系统「下载/Character Editor」文件夹。此前保存在应用专属目录，卸载应用时会被一起删除。</p>
+          <h3>手机上的信息栏跟随滑动</h3>
+          <p>沉浸模式下，顶部信息栏不再一下子消失，而是随着上滑逐段收起、下滑逐段露出；滑到底部时收起，滑回顶部时完整显示。原来「出现几秒后自动消失」的计时行为已经取消。想立刻唤出它，可以从屏幕顶部往下拉，或点一下顶部边缘。</p>
         </article>
         <article>
-          <h3>官网链接恢复正常</h3>
-          <p>应用内「官方网站」「全部版本」「查看发布说明」此前打开的是一个空地址（显示 404），现在会打开本页面。</p>
+          <h3>悬浮栏不再互相遮挡</h3>
+          <p>信息栏出现时把搜索栏一起往下推，而不是盖住它；右侧的消息导航按钮也会自动避开顶部信息栏和底部输入框。桌面端的悬停工具栏同样不再压住搜索栏。</p>
         </article>
         <article>
-          <h3>窄屏布局修复</h3>
-          <p>修复手机等窄屏上，世界书管理等列表里较长的描述把右侧开关和按钮挤出屏幕的问题。</p>
+          <h3>手机侧栏去掉关闭按钮</h3>
+          <p>它压在侧栏标题栏的按钮上，在 RP「会话」页正好挡住「新建会话」。关闭侧栏仍然可以左右滑动、点击空白处或按系统返回键。</p>
         </article>
         <article>
-          <h3>Android 暂不提供游戏卡</h3>
-          <p>移动端界面还没有适配游戏卡，相关入口、创作 Skill 和 AI 工具在手机上都不会出现。Windows 上的游戏卡仍是测试中的功能。</p>
+          <h3>手机上的文件管理改为分层页面</h3>
+          <p>先选存储位置，再逐级进入目录，最后打开文件，全程在应用内完成，不再跳转页面或重新加载整个应用，关掉就回到原来的界面。系统返回键每次返回一层，新建、导入、粘贴和刷新收进顶部的「更多」菜单，长路径不再挤在一行。文件操作、长按多选、批量操作和回收站的行为没有变化。</p>
         </article>
         <article>
-          <h3>v1.6.2：世界书重新生效</h3>
-          <p>修复 RP 聊天和 AI 助手未能把世界书内容加入模型上下文的问题，角色卡内嵌世界书与独立世界书都受此修复覆盖，并保留禁用、二级关键词、概率和注入位置等原有规则。更新后无需重新导入资源。</p>
+          <h3>Windows：游戏卡的信息栏</h3>
+          <p>游玩游戏卡时，顶部悬浮栏显示的是这局游戏——名称、版本、存档是否来自旧版本，以及运行日志、重新开始、重新载入和退出游戏；与游戏无关的角色头像和会话切换不再出现。游戏卡仍是测试中的功能。</p>
+        </article>
+        <article>
+          <h3>v1.6.3：Android 重新发布</h3>
+          <p>Android 与 Windows 重新同步到同一版本，包含 v1.6.1 与 v1.6.2 的全部修复（世界书重新生效、修复启动卡死与白屏），导出文件改存到系统「下载/Character Editor」，并修复了应用内的官网链接。</p>
         </article>
       </div>
     </section>
@@ -204,7 +208,7 @@
         <details><summary>我的角色和聊天数据会上传吗？<span>＋</span></summary><p>角色、世界书、预设和会话默认保存在本机。只有在你主动配置 AI 服务或 MCP 服务时，相关请求才会发送到对应服务。</p></details>
         <details><summary>如何获得新版本？<span>＋</span></summary><p>正常情况下可以在应用设置里检查更新，也可以随时回到本页面手动下载。例外有两种：Windows v1.6.0 及更早需要手动安装一次；Android v1.6.0 及更早需要按<a href="#upgrade">升级须知</a>导出数据后重装。之后两端都恢复应用内更新。</p></details>
         <details><summary>为什么需要手动安装或重装？<span>＋</span></summary><p>应用的更新包由一把私钥签名，安装后的版本用配套的公钥验证它。v1.6.1 起更换了这对密钥，于是旧版本手里的公钥验不过新包，Android 系统也拒绝让签名不同的包覆盖安装。这是系统层面的安全机制，只能手动处理一次。</p></details>
-        <details><summary>覆盖安装会丢数据吗？<span>＋</span></summary><p>Windows 不会。数据保存在安装目录之外，覆盖安装不会碰它，新版本启动后继续使用同一份数据。如果你把数据放在了自定义位置而新版本没有认出来，可以在应用的设置 → 存储里用「设置数据路径」重新指向它——这个操作只改指针，不会复制或删除任何文件。Android 从 v1.6.0 升级需要卸载重装，卸载会清空应用内数据，所以一定要先导出；装上 v1.6.3 之后的更新都是覆盖安装，不会丢数据。</p></details>
+        <details><summary>覆盖安装会丢数据吗？<span>＋</span></summary><p>Windows 不会。数据保存在安装目录之外，覆盖安装不会碰它，新版本启动后继续使用同一份数据。如果你把数据放在了自定义位置而新版本没有认出来，可以在应用的设置 → 存储里用「设置数据路径」重新指向它——这个操作只改指针，不会复制或删除任何文件。Android 从 v1.6.0 升级需要卸载重装，卸载会清空应用内数据，所以一定要先导出；装上 v1.6.3 或更新的版本之后，更新都是覆盖安装，不会丢数据。</p></details>
         <details><summary>Android 为什么要卸载重装？<span>＋</span></summary><p>旧的签名密钥在开发电脑重置系统时丢失，已经无法找回，新版只能用新签名发布。我们等了两个版本，最终决定不再让 Android 用户继续留在有问题的 v1.6.0 上（例如世界书无法注入），所以在 v1.6.3 提供导出后重装的迁移方式。给你带来麻烦，非常抱歉。</p></details>
       </div>
     </section>
