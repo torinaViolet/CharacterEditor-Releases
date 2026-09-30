@@ -20,7 +20,7 @@
 
   <a class="upgrade-banner" href="#upgrade">
     <strong>Android v1.6.0 及更早：升级前请先备份数据</strong>
-    <span>旧签名版本无法覆盖安装；v1.6.3 及以上可以在应用内直接升级到 v1.7.1</span>
+    <span>旧签名版本无法覆盖安装；v1.6.3 及以上可以在应用内直接升级到 v1.7.2</span>
     <em>查看步骤 →</em>
   </a>
 
@@ -47,7 +47,7 @@
         <div class="hero-actions">
           <a class="button button-primary" href="https://pub-574cb9a14cd54d07bf69c82e02931fa3.r2.dev/CharacterEditor-Windows-x64-setup.exe">
             <span>下载 Windows 版</span>
-            <small>v1.7.1</small>
+            <small>v1.7.2</small>
           </a>
           <a class="button button-secondary" href="#features">了解功能</a>
         </div>
@@ -130,10 +130,10 @@
     <section class="download section-shell" id="download">
       <div class="download-card">
         <img src="assets/icon.png" alt="Character Editor 图标" width="96" height="96">
-        <div class="download-copy"><div class="section-kicker">现在开始创作</div><h2>把下一个角色带到这里</h2><p>Windows 与 Android 均已更新到 v1.7.1。现有 v1.6.3 及以上版本可以在应用内检查更新；从 Android v1.6.0 及更早版本升级前，请先看下方的升级须知。</p></div>
+        <div class="download-copy"><div class="section-kicker">现在开始创作</div><h2>把下一个角色带到这里</h2><p>Windows 与 Android 均已更新到 v1.7.2。现有 v1.6.3 及以上版本可以在应用内检查更新；从 Android v1.6.0 及更早版本升级前，请先看下方的升级须知。</p></div>
         <div class="download-actions">
-          <a class="button button-light" href="https://pub-574cb9a14cd54d07bf69c82e02931fa3.r2.dev/CharacterEditor-Windows-x64-setup.exe"><span>Windows x64</span><small>v1.7.1 · 安装包</small></a>
-          <a class="button button-android" href="https://pub-574cb9a14cd54d07bf69c82e02931fa3.r2.dev/CharacterEditor-Android-arm64.apk"><span>Android ARM64</span><small>v1.7.1 · APK</small></a>
+          <a class="button button-light" href="https://pub-574cb9a14cd54d07bf69c82e02931fa3.r2.dev/CharacterEditor-Windows-x64-setup.exe"><span>Windows x64</span><small>v1.7.2 · 安装包</small></a>
+          <a class="button button-android" href="https://pub-574cb9a14cd54d07bf69c82e02931fa3.r2.dev/CharacterEditor-Android-arm64.apk"><span>Android ARM64</span><small>v1.7.2 · APK</small></a>
         </div>
       </div>
       <div class="download-meta"><span>Windows 10 / 11 · x64</span><span>Android 8.0+ · ARM64</span><span>安装包经过签名验证</span><a href="privacy.html">隐私说明</a></div>
@@ -163,33 +163,33 @@
           </ol>
           <p class="upgrade-note danger">从旧签名版本重装时，AI 助手的长期记忆、模型与供应商配置（包括 API Key）、MCP 服务和偏好设置需要在新版中重新设置。</p>
           <p>装上 v1.6.3 或更新的版本之后，Android 的后续更新可以直接覆盖安装。</p>
-          <a class="button button-secondary" href="https://pub-574cb9a14cd54d07bf69c82e02931fa3.r2.dev/CharacterEditor-Android-arm64.apk">下载 Android APK（v1.7.1）</a>
+          <a class="button button-secondary" href="https://pub-574cb9a14cd54d07bf69c82e02931fa3.r2.dev/CharacterEditor-Android-arm64.apk">下载 Android APK（v1.7.2）</a>
         </article>
       </div>
     </section>
 
     <section class="changelog section-shell" id="changelog">
-      <div><div class="section-kicker">更新日志</div><h2>v1.7.1 做了什么</h2></div>
+      <div><div class="section-kicker">更新日志</div><h2>v1.7.2 做了什么</h2></div>
       <div class="changelog-list">
         <article>
-          <h3>助手会先检查自己的工具</h3>
-          <p>CE 助手的官方预设会先查询当前可用工具，再回答能否生图或处理文件等问题；需要使用的工具会先启用。已有内置预设会补入这条规则，同时保留其他编辑。</p>
+          <h3>同名导入可选更新或新建</h3>
+          <p>导入角色卡和其他资源时，如发现同名内容，会询问更新现有项目还是新建，避免无意生成重复内容。</p>
         </article>
         <article>
-          <h3>直接用生图模型聊天</h3>
-          <p>在 AI 助手中选用图像专用模型，输入文字描述即可生成图片。产物保存到文件管理器的媒体目录；普通对话回复中的图片也会尝试保存到媒体目录，方便之后查找和下载。</p>
+          <h3>开场白会执行宏</h3>
+          <p>RP 会话的开场白现在会执行消息宏，让展示内容与会话上下文保持一致。</p>
         </article>
         <article>
-          <h3>修复图片下载</h3>
-          <p>图片查看器通过应用读取远程图片，修复部分图片下载或复制时出现的 Failed to fetch。远程地址无法读取时，原链接仍会保留，并提示保存失败。</p>
+          <h3>独立的助手会话管理</h3>
+          <p>点击 AI 助手的会话名称即可进入管理面板，按时间查看、搜索、改名、删除或备份会话。</p>
         </article>
         <article>
-          <h3>会话标题更贴近内容</h3>
-          <p>新会话默认以首条用户文字命名，也可以在模型设置中开启 AI 标题，由指定的标题模型生成。手动改名不会被 AI 覆盖。</p>
+          <h3>更舒适的编辑与思考展示</h3>
+          <p>消息输入框默认更高，思考内容可以在小型思考框与完整视图之间切换；角色卡脚本和高级选项卡也有了不同的图标。</p>
         </article>
         <article>
-          <h3>错误提示回到对话末尾</h3>
-          <p>AI 助手生成出错时，错误提示显示在所属轮次的最后一条消息之后。</p>
+          <h3>移动端与文档</h3>
+          <p>Android 沉浸模式的顶栏可从顶部下滑唤出、向上滑隐藏，开场白不再被遮住；选中文字后的菜单出现得更快。软件更新说明支持 Markdown，角色卡脚本编辑页新增<a href="script-api.html">接口文档</a>入口。</p>
         </article>
       </div>
     </section>
