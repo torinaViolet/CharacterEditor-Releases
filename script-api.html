@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6d5dfc">
+  <meta name="description" content="Character Editor 角色卡脚本 API：生命周期、ce 状态、笔记与按需世界书、消息宏和组件。">
+  <title>角色卡脚本 API — Character Editor</title>
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .docs-hero{padding:76px 0 42px;max-width:900px}.docs-hero h1{font-size:clamp(38px,5vw,62px);margin:10px 0 18px}.docs-hero p{font-size:17px;color:var(--muted);max-width:760px}.docs-layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:56px;padding-bottom:100px}.docs-toc{position:sticky;top:108px;align-self:start;display:grid;gap:7px;padding:20px;border:1px solid var(--line);border-radius:18px;background:#fff}.docs-toc strong{font-size:13px;margin-bottom:8px}.docs-toc a{font-size:13px;color:var(--muted);padding:5px 0}.docs-toc a:hover,.docs-content a{color:var(--violet)}.docs-content{min-width:0}.docs-content section{scroll-margin-top:108px;margin-bottom:56px}.docs-content h2{font-size:29px;letter-spacing:-.035em;margin:0 0 16px}.docs-content h3{font-size:18px;margin:25px 0 9px}.docs-content p,.docs-content li{font-size:15px;line-height:1.8}.docs-content p{margin:0 0 14px}.docs-content ul,.docs-content ol{padding-left:23px}.docs-content li{margin:5px 0}.docs-content code{background:#edeafd;border-radius:5px;padding:2px 5px;font-size:.9em;color:#4d3cb2}.docs-content pre{overflow-x:auto;border-radius:16px;background:#211d36;color:#f0eefa;padding:19px 22px;margin:18px 0 22px;line-height:1.65;font-size:13px}.docs-content pre code{background:none;color:inherit;padding:0}.docs-content .note{border:1px solid #dcd5ff;background:#f5f2ff;border-radius:14px;padding:16px 18px;margin:18px 0}.docs-content .note p:last-child{margin-bottom:0}.docs-table{overflow-x:auto;border:1px solid var(--line);border-radius:14px;margin:16px 0 24px}.docs-table table{border-collapse:collapse;width:100%;min-width:550px;font-size:14px}.docs-table th,.docs-table td{padding:11px 13px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}.docs-table th{background:#f4f1ff;font-weight:700}.docs-table tr:last-child td{border-bottom:0}.docs-table code{white-space:nowrap}.docs-top-link{display:inline-block;margin-top:9px;font-size:13px}.site-header nav .active{color:var(--violet);font-weight:700}@media(max-width:800px){.docs-hero{padding:56px 0 30px}.docs-layout{grid-template-columns:1fr;gap:28px}.docs-toc{position:static;grid-template-columns:repeat(2,minmax(0,1fr))}.docs-toc strong{grid-column:1/-1}.docs-content section{scroll-margin-top:88px}}@media(max-width:620px){.docs-content h2{font-size:25px}.docs-toc{padding:15px}.docs-content pre{padding:15px}}
+    .ambient-one{right:0;width:min(620px,100vw)}
+  </style>
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <header class="site-header" aria-label="主导航">
+    <a class="brand" href="index.html" aria-label="Character Editor 首页"><img src="assets/icon.png" alt="" width="38" height="38"><span>Character Editor</span></a>
+    <nav><a href="index.html#features">功能</a><a href="index.html#download">下载</a><a class="active" href="script-api.html" aria-current="page">脚本 API</a><a href="index.html#changelog">更新日志</a></nav>
+  </header>
+
+  <main class="section-shell">
+    <div class="docs-hero">
+      <div class="section-kicker">角色卡创作 · API 参考</div>
+      <h1>角色卡脚本 API</h1>
+      <p>在角色卡中编写 JavaScript 脚本或 HTML/CSS/JS 消息组件，通过生命周期事件和消息宏扩展 RP 会话。本文对应 Character Editor v1.7 系列的卡内脚本运行时。</p>
+    </div>
+    <div class="docs-layout">
+      <nav class="docs-toc" aria-label="本页目录">
+        <strong>本页内容</strong>
+        <a href="#quick-start">快速开始</a>
+        <a href="#events">执行时机与授权</a>
+        <a href="#ce-api">ce 对象</a>
+        <a href="#sdk-api">sdk 接口</a>
+        <a href="#macros">消息宏与组件</a>
+        <a href="#limits">运行边界</a>
+      </nav>
+      <div class="docs-content">
+        <section id="quick-start">
+          <h2>快速开始</h2>
+          <p>打开角色卡编辑页的「角色卡脚本」，新建脚本，填写代码并选择执行时机和权限。保存后启用脚本，再对当前版本进行本机授权。修改脚本后需要重新授权。</p>
+          <pre><code>// 选择「会话开始」，勾选「读取变量」「修改消息与会话变量」
+ce.declareSession("hp", 100);
+ce.var.turn = 0;
+return "会话已初始化";</code></pre>
+          <p>默认模式把编辑器内容当作异步 JavaScript 函数体运行，可以直接使用 <code>await</code>。若启用「ES 模块」，请导出 <code>run</code> 函数；消息宏也可以调用其他导出的函数。</p>
+          <pre><code>// ES 模块模式
+export async function run(name = "旅人") {
+  return `你好，${name}`;
+}</code></pre>
+        </section>
+
+        <section id="events">
+          <h2>执行时机与授权</h2>
+          <div class="docs-table"><table><thead><tr><th>事件</th><th>发生时间</th></tr></thead><tbody>
+            <tr><td><code>sessionStart</code></td><td>新 RP 会话首次发送消息时执行。旧会话不会补跑；只有此事件可以注册会话共享变量。</td></tr>
+            <tr><td><code>beforeGenerate</code></td><td>每次生成回复前执行。</td></tr>
+            <tr><td><code>afterGenerate</code></td><td>生成回复后执行。</td></tr>
+            <tr><td><code>message</code></td><td>通过 <code>script</code> 消息宏调用；需要另行开启「允许消息宏调用」。</td></tr>
+          </tbody></table></div>
+          <p>运行时提供 <code>event</code>（当前事件名）、<code>args</code>（消息宏的位置参数数组）、<code>ce</code> 和 <code>sdk</code>。权限需要在脚本中勾选，并由用户为此设备上的当前脚本版本授权。</p>
+          <div class="docs-table"><table><thead><tr><th>权限</th><th>用途</th></tr></thead><tbody>
+            <tr><td><code>context.read</code></td><td>读取 <code>ce.ctx</code> 对话上下文。</td></tr>
+            <tr><td><code>state.read</code></td><td>读取 <code>ce.var</code>、<code>ce.session</code> 和 <code>ce.app</code>。</td></tr>
+            <tr><td><code>state.write</code></td><td>修改 <code>ce.var</code>、已注册的 <code>ce.session</code> 变量；需同时勾选 <code>state.read</code>。</td></tr>
+            <tr><td><code>notes.read</code> / <code>notes.write</code></td><td>列出、读取或写入当前 RP 会话笔记；写入权限也需要读取权限。</td></tr>
+            <tr><td><code>knowledge.read</code></td><td>查阅当前角色卡启用的按需世界书条目。</td></tr>
+          </tbody></table></div>
+        </section>
+
+        <section id="ce-api">
+          <h2><code>ce</code> 对象</h2>
+          <div class="docs-table"><table><thead><tr><th>成员</th><th>说明</th></tr></thead><tbody>
+            <tr><td><code>ce.ctx</code></td><td>只读的角色与消息上下文，例如 <code>ce.ctx.char</code>。</td></tr>
+            <tr><td><code>ce.var</code></td><td>当前剧情分支变量。普通赋值和 <code>delete</code> 会记录变更。</td></tr>
+            <tr><td><code>ce.session</code></td><td>本 RP 会话的共享变量；只能写入已由会话开始脚本注册的名称。</td></tr>
+            <tr><td><code>ce.app</code></td><td>只读的应用变量，并提供 <code>time()</code> 与 <code>random()</code>。</td></tr>
+            <tr><td><code>ce.declareSession(name, initial)</code></td><td>仅在 <code>sessionStart</code> 注册共享变量，首次注册时设置初始值。</td></tr>
+          </tbody></table></div>
+          <p>变量值必须是可序列化的 JSON 值。读取到的对象是只读快照；修改嵌套值时，请构造新对象并重新赋给变量。删除变量请使用 <code>delete ce.var.name</code> 或 <code>delete ce.session.name</code>。</p>
+        </section>
+
+        <section id="sdk-api">
+          <h2><code>sdk</code> 接口</h2>
+          <p>桥接调用都是异步的，按所选权限检查。笔记的 <code>scope</code> 为 <code>node</code>（跟随剧情分支）或 <code>session</code>（会话共享）。</p>
+          <div class="docs-table"><table><thead><tr><th>方法</th><th>作用</th></tr></thead><tbody>
+            <tr><td><code>sdk.notes.list({ query, offset, limit })</code></td><td>分页列出当前会话笔记索引。</td></tr>
+            <tr><td><code>sdk.notes.read(scope, path)</code></td><td>读取笔记正文与 <code>revision</code>；不存在时返回 <code>null</code>。</td></tr>
+            <tr><td><code>sdk.notes.write(note)</code></td><td>创建或更新笔记。传入 <code>scope</code>、<code>path</code>、<code>title</code>、<code>text</code>、可选 <code>summary</code>，以及 <code>expectedRevision</code>；新建时该值为 <code>null</code>。</td></tr>
+            <tr><td><code>sdk.notes.delete(scope, path, expectedRevision)</code></td><td>按版本删除笔记。</td></tr>
+            <tr><td><code>sdk.knowledge.list({ query, offset, limit })</code></td><td>搜索当前角色卡启用的按需世界书索引。</td></tr>
+            <tr><td><code>sdk.knowledge.read(id, { revision, offset })</code></td><td>读取条目正文，每次最多返回 12000 字符，并给出 <code>next_offset</code>。</td></tr>
+          </tbody></table></div>
+          <pre><code>const current = await sdk.notes.read("node", "npc.md");
+await sdk.notes.write({
+  scope: "node",
+  path: "npc.md",
+  title: "NPC 线索",
+  summary: "已确认的背景",
+  text: "记录正文",
+  expectedRevision: current?.revision ?? null,
+});
+
+const page = await sdk.knowledge.list({ query: "城镇" });
+if (page.items.length) {
+  const entry = await sdk.knowledge.read(page.items[0].id);
+  return entry.content;
+}</code></pre>
+          <p>笔记写入和删除采用版本检查；若其他操作已改动同一笔记，会返回冲突错误。脚本执行失败或撤权时，本次暂存的状态和笔记修改会被丢弃。</p>
+        </section>
+
+        <section id="macros">
+          <h2>消息宏与组件</h2>
+          <p>脚本开启「允许消息宏调用」并授权后，可在新提交的消息里使用脚本名称或唯一资源 ID。函数体模式仅有 <code>run</code>；ES 模块可调用其他导出函数。参数在代码中通过 <code>args</code> 或导出函数的位置参数读取。</p>
+          <pre><code>{{script::脚本名称::run::参数}}
+{{!script::脚本名称::run::参数}}  // 执行但不输出</code></pre>
+          <p>HTML/CSS/JS 消息组件通过 <code>ui</code> 宏插入，组件内可读取生成消息时的 <code>ce</code> 快照和 <code>args</code>，并操作自己的 DOM。组件不能直接修改剧情状态；需要写入状态时由脚本宏完成。</p>
+          <pre><code>{{ui::组件名称::参数}}</code></pre>
+          <div class="note"><p>脚本和组件宏只在消息首次提交时处理；重新渲染历史消息不会再次执行。代码围栏、行内代码和转义的宏示例不会执行。重名时请改用唯一资源 ID。</p></div>
+        </section>
+
+        <section id="limits">
+          <h2>运行边界</h2>
+          <ul>
+            <li>脚本在隔离运行时执行，不提供任意文件系统、密钥、长期记忆或其他角色卡访问接口。</li>
+            <li>只可查阅当前角色卡启用的按需世界书；自动注入条目不会因此变成脚本可读。</li>
+            <li>单张卡最多挂载 30 个脚本；单条消息最多调用 32 次脚本或组件。</li>
+            <li>脚本有执行超时和输出长度限制；会话切换、撤权或失败会取消本次执行。</li>
+          </ul>
+          <a class="docs-top-link" href="#quick-start">返回顶部 ↑</a>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="section-shell"><a class="brand" href="index.html"><img src="assets/icon.png" alt="" width="34" height="34"><span>Character Editor</span></a><p>让每一个角色，都拥有值得抵达的世界。</p><div><a href="index.html#download">下载</a><a href="index.html#changelog">更新日志</a><a href="privacy.html">隐私</a></div></footer>
+</body>
+</html>
