@@ -23,3 +23,28 @@
 @media(max-width:900px){.upgrade-grid{grid-template-columns:1fr}.changelog{grid-template-columns:1fr;gap:26px;padding-top:72px}}
 @media(max-width:620px){.upgrade-banner{font-size:12px;padding:10px 16px}.upgrade{padding-top:20px}.upgrade-card{padding:22px}.changelog{padding:60px 0 30px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}}
+
+.alpha-jump { color: var(--violet); font-size: 14px; font-weight: 700; align-self: center; }
+.alpha-jump:hover, .alpha-actions small a:hover { text-decoration: underline; }
+.alpha-download {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-top: 32px;
+  padding: 28px 32px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: #fff;
+  scroll-margin-top: 104px;
+}
+.alpha-download h3 { margin: 0 0 8px; font-size: 23px; }
+.alpha-download h3 span { display: inline-block; color: var(--violet); font-size: 16px; }
+.alpha-download p { max-width: 62ch; margin: 0; color: var(--muted); font-size: 14px; }
+.alpha-actions { display: grid; justify-items: center; gap: 7px; flex-shrink: 0; }
+.alpha-actions small { color: var(--muted); }
+.alpha-actions small a { color: var(--violet); }
+@media (max-width: 620px) {
+  .alpha-download { display: grid; gap: 20px; padding: 24px; scroll-margin-top: 88px; }
+  .alpha-actions { justify-items: start; }
+}

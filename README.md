@@ -2,24 +2,26 @@
 
 Character Editor 的公开发行仓库，承载官网下载页、角色卡脚本 API 文档与隐私说明。
 
-目前提供 Windows x64 安装程序和 Android ARM64 APK。应用内的软件更新页面也提供官网、版本历史及双平台直接下载入口。
+正式版提供 Windows x64 安装程序和 Android ARM64 APK。Windows 测试版为 [2.0.0-alpha.1](https://torinaviolet.github.io/CharacterEditor-Releases/#alpha)，可与正式版并排安装，使用独立的数据目录和更新渠道。
 
 两端版本可以不一致：v1.6.1、v1.6.2 只发布了 Windows。v1.6.3 起两端重新同步，当前为 v1.7.3。Android 从 v1.6.0 升级需要先导出数据再卸载重装（换签名后无法覆盖安装），步骤见官网「升级须知」；v1.6.3 及以上可以在应用内直接升级。
 
 - 官网：https://torinaviolet.github.io/CharacterEditor-Releases/
 - 角色卡脚本 API：https://torinaviolet.github.io/CharacterEditor-Releases/script-api.html
-- 下载：https://pub-574cb9a14cd54d07bf69c82e02931fa3.r2.dev/
+- [官网下载区](https://torinaviolet.github.io/CharacterEditor-Releases/#download)
 
 应用源码在私有仓库维护。本仓库不包含用户数据、API Key 或更新签名私钥。
 
 ## 安装包托管在 R2，不在本仓库的 Releases
 
 发行文件与更新清单都发布到 Cloudflare R2，本仓库的 GitHub Releases **只保留历史版本，不再更新**。
-页面上的下载按钮直接指向 R2 的固定文件名，因此始终是最新版：
+官网的正式版按钮和更新清单使用固定的 R2 对象名。
 
 - `CharacterEditor-Windows-x64-setup.exe`
 - `CharacterEditor-Android-arm64.apk`
 - `latest.json` / `latest-mobile.json`（应用内更新检查用）
+
+Windows 测试版按钮指向 `alpha/<版本>/CharacterEditor-<版本>-Windows-x64-setup.exe`，同目录提供 SHA-256 校验值。测试版的应用内更新读取 `alpha/latest.json`。发布下一个 Alpha 时，更新页面上的版本、文件大小、安装包和校验链接。
 
 根目录的 `latest-mobile.json` 是迁移到 R2 之前的遗留文件，当前版本的应用不再读取它。
 
